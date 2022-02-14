@@ -28,14 +28,12 @@ User = Client(
 @Bot.on_message(filters.private & filters.command("start"))
 async def start_handler(_, event: Message):
     await event.reply_text(
-        "Hi, I am Messages Search Bot!\n\n"
+        "مرحبا أنا بوت أبحث عن الرسائل!\n\n"
         "**Developer:** @AbirHasan2005\n"
         "**Demo Bot:** @AHListBot",
         reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton("Support Group", url="https://t.me/DevsZone"),
-             InlineKeyboardButton("Bots Channel", url="https://t.me/Discovery_Updates")],
-            [InlineKeyboardButton("Developer - @AbirHasan2005")],
-            [InlineKeyboardButton("Search Inline", switch_inline_query_current_chat=""), InlineKeyboardButton("Go Inline", switch_inline_query="")]
+            [InlineKeyboardButton("مجموعة الدعم", url="https://t.me/BotsArabic"),
+             InlineKeyboardButton("قناة البوت", url="https://t.me/BotsListAR")
         ])
     )
 
@@ -47,18 +45,17 @@ async def inline_handlers(_, event: InlineQuery):
     if event.query == "":
         answers.append(
             InlineQueryResultArticle(
-                title="This is Inline Messages Search Bot!",
-                description="You can search Channel All Messages using this bot.",
+                title="يمكنك البحث بالمضمنة باستخدام هذا البوت",
+                description="البحث في القناة عن جميع القوائم",
                 input_message_content=InputTextMessageContent(
                     message_text="Using this Bot you can Search a Channel All Messages using this bot.\n\n"
-                                 "Made by @AbirHasan2005",
+                                 "Made by @BotsListAR",
                     disable_web_page_preview=True
                 ),
                 reply_markup=InlineKeyboardMarkup([
-                    [InlineKeyboardButton("Search Here", switch_inline_query_current_chat="")],
-                    [InlineKeyboardButton("Support Group", url="https://t.me/DevsZone"),
-                     InlineKeyboardButton("Bots Channel", url="https://t.me/Discovery_Updates")],
-                    [InlineKeyboardButton("Developer - @AbirHasan2005", url="https://t.me/AbirHasan2005")]
+                    [InlineKeyboardButton("إبحث هنا", switch_inline_query_current_chat="")],
+                    [InlineKeyboardButton("مجموعة الدعم", url="https://t.me/BotsArabic"),
+                     InlineKeyboardButton("قناة البوت", url="https://t.me/BotsListAR")]
                 ])
             )
         )
